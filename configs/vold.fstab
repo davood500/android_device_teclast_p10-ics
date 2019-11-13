@@ -1,0 +1,26 @@
+
+
+
+
+
+dev_mount system               /dev/block/platform/ff0f0000.dwmmc/by-name/system           /system             ext4      ro,noatime,nodiratime,noauto_da_alloc                            wait
+dev_mount cache               /dev/block/platform/ff0f0000.dwmmc/by-name/cache            /cache               ext4      rw,noatime,nodiratime,nosuid,nodev,noauto_da_alloc,discard       wait,formattable
+dev_mount userdata            /dev/block/platform/ff0f0000.dwmmc/by-name/userdata         /userdata            ext4      rw,noatime,nodiratime,nosuid,nodev,noauto_da_alloc,discard       wait
+dev_mount userdata            /dev/block/platform/ff0f0000.dwmmc/by-name/userdata         /data                ext4      rw,noatime,nodiratime,nosuid,nodev,noauto_da_alloc,discard       wait,formattable,encryptable=/userdata/key_file
+dev_mount radical_update      /dev/block/platform/ff0f0000.dwmmc/by-name/radical_update   /radical_update      ext4      noatime,nodiratime,nosuid,nodev,noauto_da_alloc,discard          wait
+dev_mount otg                  /dev/block/zram0             				    none                swap      defaults       						   zramsize=533413200,swapprio=1
+
+
+dev_mount sdcard               /devices/ff0f0000.dwmmc/mmc_host/mmc*          auto auto defaults voldmanaged=sdcard1:auto,encryptable=userdata
+dev_mount sdcard              /devices/ff0c0000.dwmmc/mmc_host/mmc*          auto auto defaults voldmanaged=sdcard1:auto,encryptable=userdata
+dev_mount                    /devices/ff580000.usb*                           auto auto defaults voldmanaged=usb:auto
+dev_mount                    /devices/ff540000.usb*                           auto auto defaults voldmanaged=usb:auto
+dev_mount                   /devices/ff500000.usb*                           auto auto defaults voldmanaged=usb:auto
+dev_mount                    /devices/ff5c0000.usb*                           auto auto defaults voldmanaged=usb:auto
+
+dev_mount boot                       /dev/block/platform/ff0f0000.dwmmc/by-name/boot         /boot             emmc     defaults                  defaults
+dev_mount recovery                  /dev/block/platform/ff0f0000.dwmmc/by-name/recovery      /recovery         emmc     defaults                  defaults 
+dev_mount uboot                    /dev/block/platform/ff0f0000.dwmmc/by-name/uboot          /uboot            emmc      defaults                  defaults
+dev_mount misc                      /dev/block/platform/ff0f0000.dwmmc/by-name/misc          /misc             emmc      defaults                  defaults
+dev_mount kernel                    /dev/block/platform/ff0f0000.dwmmc/by-name/kernel        /kernel           emmc      defaults                  defaults
+dev_mount resource                   /dev/block/platform/ff0f0000.dwmmc/by-name/resource     /resource         emmc      defaults                  defaults
